@@ -1,35 +1,63 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Avatar, Button, Flex, Grid, View } from "@adobe/react-spectrum";
+import Toolbar from "./components/toolbar";
 
+const avatarAddress =
+  "https://64.media.tumblr.com/6505218202c423fda9f27a5a09f1e7ad/tumblr_n99qzp0ASm1sojb9co1_640.jpg";
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+    <View
+    backgroundColor={'gray-200'}>
+    <Grid
+        areas={[
+          "header header header header",
+          "toolbar menubar content sidebar ",
+        ]}
+        columns={["60px 1fr 3fr 1fr"]}
+        rows={["size-700", "auto"]}
+        height={"100vh"}
+        gap={"size-10"}
+      >
+        <View
+          paddingEnd={"size-200"}
+          backgroundColor="gray-100"
+          gridArea="header"
+        >
+          <Flex
+            height={"100%"}
+            justifyContent={"end"}
+            gap={"size-150"}
+            alignItems={"center"}
+          >
+            <Avatar size={"avatar-size-400"} src={avatarAddress}></Avatar>
+            <Button variant="accent">PUBLISH</Button>
+          </Flex>
+        </View>
+        <View
+          paddingTop={'size-400'}
+          backgroundColor="gray-100"
+          gridArea="toolbar"
+          children={<Toolbar/>}
+        />
+        <View
+          backgroundColor="gray-100"
+          gridArea="menubar"
+        />
+        <View
+         
+          backgroundColor="gray-200"
+          gridArea="content"
+        />
+        <View
+        
+          backgroundColor="gray-100"
+          gridArea="sidebar"
+        />
+      </Grid>
+    </View>
+      
     </>
-  )
+  );
 }
 
-export default App
+export default App;
