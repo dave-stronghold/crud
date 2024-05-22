@@ -14,7 +14,7 @@ export default function Toolbar() {
   };
 
   const getIconStyle = (iconName) => {
-    return { fill: activeIcon === iconName ? 'var(--spectrum-blue-900)' : '#667667' };
+    return { fill: activeIcon === iconName ? 'var(--spectrum-blue-900)' : '#ababab' };
   };
 
   return (

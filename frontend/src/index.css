@@ -5,6 +5,11 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-body{
+body {
+  overflow: hidden;
   margin: 0;
+  cursor: url("./assets/cursor.png"), auto;
+}
+*{
+  user-select: none;
 }

@@ -1,6 +1,6 @@
 import { Avatar, Button, Flex, Grid, View } from "@adobe/react-spectrum";
 import Toolbar from "./components/toolbar";
-
+import Content from "./components/content";
 const avatarAddress =
   "https://64.media.tumblr.com/6505218202c423fda9f27a5a09f1e7ad/tumblr_n99qzp0ASm1sojb9co1_640.jpg";
 function App() {
@@ -47,6 +47,7 @@ function App() {
          
           backgroundColor="gray-200"
           gridArea="content"
+          children={<Content/>}
         />
         <View
         
